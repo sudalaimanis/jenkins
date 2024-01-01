@@ -10,23 +10,18 @@ pipeline {
     stage('Build') {
       steps {
         sh 'ls'
-        sh 'docker build -t lloydmatereke/jenkins-docker-hub .'
+        sh 'sudo docker build -t krishnansai/demosu .'
       }
     }
-    stage('Login') {
+       stage('Push') {
       steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-      }
-    }
-    stage('Push') {
-      steps {
-        sh 'docker push lloydmatereke/jenkins-docker-hub'
+        sh 'sudo docker push krishnansai/demosu'
       }
     }
   }
   post {
     always {
-      sh 'docker logout'
+      sh 'sudo docker images'
     }
   }
 }
