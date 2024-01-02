@@ -9,20 +9,19 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'sudo su'
         sh 'ls'
-        sh 'sudo docker build . -t sudalaimmanis/demosu'
+        sh 'docker build . -t sudalaimmanis/demosu'
       }
     }
        stage('Push') {
       steps {
-        sh 'sudo docker push sudalaimmanis/demosu'
+        sh 'docker push sudalaimmanis/demosu'
       }
     }
   }
   post {
     always {
-      sh 'sudo docker images'
+      sh 'docker images'
     }
   }
 }
