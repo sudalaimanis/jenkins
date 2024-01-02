@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'ls'
-        sh 'sudo docker build -t sudalaimmanis/demosu .'
+        sh 'sudo docker build . -t sudalaimmanis/demosu'
       }
     }
        stage('Push') {
