@@ -10,12 +10,12 @@ pipeline {
     stage('Build') {
       steps {
         sh 'ls'
-        sh 'sudo docker build -t krishnansai/demosu .'
+        sh 'sudo docker build -t sudalaimmanis/demosu .'
       }
     }
        stage('Push') {
       steps {
-        sh 'sudo docker push krishnansai/demosu'
+        sh 'sudo docker push sudalaimmanis/demosu'
       }
     }
   }
