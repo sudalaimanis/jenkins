@@ -9,6 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh 'sudo su'
         sh 'ls'
         sh 'sudo docker build . -t sudalaimmanis/demosu'
       }
