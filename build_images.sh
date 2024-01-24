@@ -10,4 +10,4 @@ cp ./Dockerfiles/* $path
 sudo docker images
 sudo docker build . -t sudalaimmanis/newapp
 sudo docker images
-sudo docker push sudalaimmanis/newapp
+sudo docker push sudalaimmanis/newapp:$(date +%Y-%m-%d)
