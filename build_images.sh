@@ -8,6 +8,6 @@ ls
 path=$(pwd)
 cp ./Dockerfiles/* $path
 sudo docker images
-sudo docker build . -t sudalaimmanis/newapp
+sudo docker build . -t sudalaimmanis/newapp:$(date +%Y-%m-%d)
 sudo docker images
 sudo docker push sudalaimmanis/newapp:$(date +%Y-%m-%d)
